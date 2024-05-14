@@ -36,11 +36,12 @@ SOURCE_PATHS = . $(ROOT)/source/digest $(ROOT)/libhttp/test \
 				../libflv/test ../librtmp/aio ../librtmp/test \
 				../librtp/test ../librtsp/source/server/aio ../librtsp/test ../librtsp/test/media \
 				../libsip/test ../libmkv/test
-				
+
 SOURCE_FILES = $(foreach dir,$(SOURCE_PATHS),$(wildcard $(dir)/*.cpp))
 SOURCE_FILES += $(foreach dir,$(SOURCE_PATHS),$(wildcard $(dir)/*.c))
 SOURCE_FILES += $(ROOT)/libice/test/ice-transport.c
 SOURCE_FILES += $(ROOT)/deprecated/tools.c
+SOURCE_FILES += $(ROOT)/source/port/sysnetconfig.c
 
 _SOURCE_FILES = $(ROOT)/libhttp/test/main.c
 SOURCE_FILES := $(filter-out $(_SOURCE_FILES),$(SOURCE_FILES))
